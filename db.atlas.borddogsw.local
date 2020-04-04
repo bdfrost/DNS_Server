@@ -1,0 +1,17 @@
+$ORIGIN atlas.birddogsw.local.
+$TTL 600
+@       SOA     hephaestus.birddogsw.local.      xavier.birddogsw.local. (
+                2020032501
+                21600 
+                3600
+                300
+                5 ) 
+;
+;
+              NS      hephaestus.birddogsw.local. 
+hephaestus    A       192.168.1.180
+
+;
+;
+demoalias    A       192.168.1.181
+www          CNAME   demoalias.atlas.birddogsw.local.
