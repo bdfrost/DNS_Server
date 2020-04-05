@@ -1,12 +1,26 @@
-
 options {
-    directory "/var/cache/bind";
-
-    recursion yes;
     listen-on { any; };
-
-    forwarders {
-            8.8.8.8;
-            8.8.4.4;
+    allow-recursion { any; };
+    allow-query { any; };
+    allow-query-cache { any; };
+    recursion yes;
+    directory "/var/cache/bind";
+    dnssec-enable yes;
+    dnssec-validation yes;
+    filter-aaaa-on-v4 yes;
+};
+logging {
+    channel bind.log {
+        file "/tmp/bind.log" versions 10 size 20m;
+        severity info;
+        print-category yes;
+        print-severity yes;
+        print-time yes;
     };
+    category queries { bind.log; };
+    category default { bind.log; };
+    category config { bind.log; };
+    category update { bind.log; };
+    category update-security { bind.log; };
+    category security { bind.log; };
 };

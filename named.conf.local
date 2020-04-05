@@ -1,5 +1,5 @@
-zone "atlas.borddogsw.local" {
+zone "atlas.birddogsw.local" {
   type master;
-  file "/etc/bind/zones/db.atlas.borddogsw.local";
+  file "/etc/bind/zones/db.atlas.birddogsw.local";
   allow-update { none; };
 };
